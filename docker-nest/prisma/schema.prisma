@@ -23,4 +23,5 @@ model Drink {
 model Takeout {
   id   Int    @id @default(autoincrement())
   name String
+  description String
 }
