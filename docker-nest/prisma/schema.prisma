@@ -18,6 +18,7 @@ model Food {
 model Drink {
   id   Int    @id @default(autoincrement())
   name String
+  alcohol Boolean
 }
 
 model Takeout {
