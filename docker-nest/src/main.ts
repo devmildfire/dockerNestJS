@@ -6,32 +6,24 @@ async function bootstrap() {
   // const keyFile  = fs.readFileSync(__dirname + '../certs/chain.pem');
   // const certFile = fs.readFileSync(__dirname + '../certs/cert.pem');
   
-  // const keyFile  = fs.readFileSync('./certs/chain.pem');
-  // const certFile = fs.readFileSync('./certs/cert.pem');
+ 
+  // console.log(__dirname);
 
-  // const certFile = fs.readFileSync(__dirname);
-  // console.log(certFile);
-  console.log(__dirname);
+  // if (fs.existsSync('./certs')) {
+  //   console.log('./certs exists');
 
-  if (fs.existsSync('./certs')) {
-    console.log('./certs exists');
+  // }
 
-  }
+    const keyFile  = fs.readFileSync('./certs/chain1.pem');
+    const certFile = fs.readFileSync('./certs/cert1.pem');
 
-    const keyFileExists  = fs.existsSync('./certs/chain1.pem');
-    console.log('keyfile 1 existence ...');
-    console.log(keyFileExists);
-
-    const certFileExists = fs.readFileSync('./certs/cert1.pem');
-    console.log('certfile 1 existence ...');
-    console.log(certFileExists);
   
   
   const app = await NestFactory.create(AppModule, 
-    // {    httpsOptions: {
-    //   key: keyFile,
-    //   cert: certFile,
-    // }}
+    {    httpsOptions: {
+      key: keyFile,
+      cert: certFile,
+    }}
                                       );
   await app.listen(3000);
 }
