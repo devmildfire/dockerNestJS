@@ -11,6 +11,11 @@ services:
       - postgres
     env_file:
       - .env
+    volumes:
+      - type: bind
+        source: /eaterscrowd_certs/live/eaterscrowd.duckdns.org
+        target: /certs
+        read_only: true
 
   postgres:
     image: postgres:13
