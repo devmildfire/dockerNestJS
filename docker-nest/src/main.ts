@@ -14,7 +14,7 @@ async function bootstrap() {
 
   // }
 
-    const keyFile  = fs.readFileSync('./certs/chain1.pem');
+    const keyFile  = fs.readFileSync('./certs/fullchain1.pem');
     const certFile = fs.readFileSync('./certs/cert1.pem');
 
   
