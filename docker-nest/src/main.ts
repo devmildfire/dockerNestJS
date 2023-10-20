@@ -6,8 +6,12 @@ async function bootstrap() {
   // const keyFile  = fs.readFileSync(__dirname + '../certs/chain.pem');
   // const certFile = fs.readFileSync(__dirname + '../certs/cert.pem');
   
-  const keyFile  = fs.readFileSync('./certs/chain.pem');
-  const certFile = fs.readFileSync('./certs/cert.pem');
+  // const keyFile  = fs.readFileSync('./certs/chain.pem');
+  // const certFile = fs.readFileSync('./certs/cert.pem');
+
+  const certFile = fs.readFileSync(__dirname);
+  console.log(certFile);
+  console.log(__dirname);
   
   const app = await NestFactory.create(AppModule, 
     // {    httpsOptions: {
