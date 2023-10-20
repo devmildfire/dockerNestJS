@@ -12,6 +12,10 @@ async function bootstrap() {
   // const certFile = fs.readFileSync(__dirname);
   // console.log(certFile);
   console.log(__dirname);
+
+  if (fs.existsSync('./certs')) {
+    console.log('./certs exists');
+  }
   
   const app = await NestFactory.create(AppModule, 
     // {    httpsOptions: {
