@@ -21,6 +21,10 @@ async function bootstrap() {
     const keyFileExists  = fs.existsSync('./certs/chain1.pem');
     console.log('keyfile 1 existence ...');
     console.log(keyFileExists);
+
+    const certFileExists = fs.readFileSync('./certs/cert1.pem');
+    console.log('certfile 1 existence ...');
+    console.log(certFileExists);
   
   
   const app = await NestFactory.create(AppModule, 
