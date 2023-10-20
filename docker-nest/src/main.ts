@@ -18,7 +18,7 @@ async function bootstrap() {
 
   }
 
-    const keyFileExists  = fs.exists('./certs/chain.pem');
+    const keyFileExists  = fs.existsSync('./certs/chain.pem');
     console.log('keyfile existence ...');
     console.log(keyFileExists);
   
